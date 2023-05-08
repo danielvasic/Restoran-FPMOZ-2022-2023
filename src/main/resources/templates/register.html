@@ -11,8 +11,11 @@
   <div class="row justify-content-center align-items-center h-100">
     <div class="col-4">
       <div class="card shadow p-5">
-        <form th:object="${user}" method="post">
-
+        <form th:action="@{/register_user}"
+              th:object="${user}" method="post">
+          <div th:if="${success==true}" class="alert alert-success">
+            Uspješno ste se registrirali prijavite se <a href="/login">ovdje</a>.
+          </div>
           <div>
             <label class="form-label"></label>
             <input class="form-control" type="text" placeholder="Unesite Vaše ime" th:field="*{firstname}" />
@@ -34,7 +37,6 @@
           </div>
 
           <button type="submit" class="btn mt-5 btn-primary col-12">Registriraj se</button>
-
         </form>
       </div>
     </div>

@@ -20,7 +20,8 @@ public class AuthController {
     UserRepository userRepo;
 
     @GetMapping("/login")
-    public String login () {
+    public String showLoginForm(Model model){
+        model.addAttribute("user", new User());
         return "login";
     }
 

@@ -15,7 +15,7 @@ public class Invoice {
     @Column(nullable = false)
     Date date;
 
-    @Column(columnDefinition = "tinyint(1) default=0")
+    @Column(columnDefinition = "tinyint(1) default 0") // popravljen bug s zapisom u bazu
     boolean payed;
     @ManyToOne
     @JoinColumn(name="user_id", nullable = false)

@@ -1,6 +1,10 @@
 package ba.sum.fpmoz.restoran.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.AssertTrue;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 import java.util.List;
 
@@ -10,14 +14,25 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min = 2, max = 50, message = "Polje mora sadržavati barem 2 znaka i manje od 50 znakova.") // Anotator za provjeru duljine unesenog teksta.
     @Column(nullable = false, length = 50)
     private String firstname;
+
+    @Size(min = 2, max = 50, message = "Polje mora sadržavati barem 2 znaka i manje od 50 znakova.") // Anotator za provjeru duljine unesenog teksta.
     @Column(nullable = false, length = 50)
     private String lastname;
+    @NotBlank(message="Molimo unesite Vašu email adresu.") // polje email mora biti jedinstveno
+    @Email(message = "Unesite ispravnu email adresu.") // polje email mora biti u obliku email adrese
     @Column(nullable = false, unique = true)
     private String email;
+
+    @NotBlank(message="Molimo unesite Vašu lozinku.") // polje mora imati vrijednost
     @Column(nullable = false)
     private String password;
+
+    @NotBlank(message="Molimo ponovite Vašu lozinku.") // polje mora imati vrijednost
+    @Transient // polje nije zapisano u bazi no potrebno je radi provjere ponovnog unosa.
+    private String passwordRepeat;
 
     @Column(nullable = false)
     private String role;
@@ -91,5 +106,13 @@ public class User {
 
     public void setInvoices(List<Invoice> invoices) {
         this.invoices = invoices;
+    }
+
+    public String getPasswordRepeat() {
+        return passwordRepeat;
+    }
+
+    public void setPasswordRepeat(String passwordRepeat) {
+        this.passwordRepeat = passwordRepeat;
     }
 }

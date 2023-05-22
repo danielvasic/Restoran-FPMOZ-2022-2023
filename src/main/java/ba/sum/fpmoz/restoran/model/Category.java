@@ -1,6 +1,7 @@
 package ba.sum.fpmoz.restoran.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class Category {
     Long id;
 
     @Column(nullable = false)
+    @NotBlank(message = "Molimo unesite naziv kategorije.")
     String name;
 
     @ManyToOne

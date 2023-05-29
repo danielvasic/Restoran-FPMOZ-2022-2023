@@ -2,6 +2,8 @@
 
 **Nositelj kolegija:** [Daniel Vasić](https://github.com/danielvasic)
 
+**Demo programske podrške** [Ovdje](http://204.216.222.226:8080) možete pronaći pokrenut primjerak programa.
+
 Dobro došli u repozitorij vježbi za kolegij **Programiranje u Javi**. Ovaj kolegij se izvodi na Fakultetu prirodoslovno-matematičkih i odgojnih znanosti Sveučilišta u Mostaru. Studijski program očekuje od studenata da se upuste u učenje i istraživanje naprednih koncepta razvoja web aplikacija, koristeći niz modernih tehnologija, uključujući:
 
 - Spring Boot programsko okruženje, snažno i fleksibilno rješenje za razvoj standalone i cloud-ready Spring aplikacija.

@@ -2,7 +2,7 @@
 
 **Nositelj kolegija:** [Daniel Vasić](https://github.com/danielvasic)
 
-Dobro došli u repozitorij vježbi za kolegij **Programiranje u Javi**. Ovaj kolegij se izvodi na Fakultetu prirodoslovno-matematičkih i odgojnih znanosti Sveučilišta u Mostaru. Studijski program očekuje od studenata da se upuste u duboko učenje i istraživanje naprednih koncepta razvoja web aplikacija, koristeći niz modernih tehnologija, uključujući:
+Dobro došli u repozitorij vježbi za kolegij **Programiranje u Javi**. Ovaj kolegij se izvodi na Fakultetu prirodoslovno-matematičkih i odgojnih znanosti Sveučilišta u Mostaru. Studijski program očekuje od studenata da se upuste u učenje i istraživanje naprednih koncepta razvoja web aplikacija, koristeći niz modernih tehnologija, uključujući:
 
 - Spring Boot programsko okruženje, snažno i fleksibilno rješenje za razvoj standalone i cloud-ready Spring aplikacija.
 - Relacijske baze podataka (MySQL), kao što je MySQL, koji je najpoznatiji open source sustav za upravljanje bazama podataka na svijetu.
@@ -13,7 +13,7 @@ Dobro došli u repozitorij vježbi za kolegij **Programiranje u Javi**. Ovaj kol
 
 ## Instalacija i upotreba programa
 
-Program koji smo razvili u sklopu vježbi iz ovog kolegija predstavlja jednostavan, ali učinkovit sistem za upravljanje inventarom restorana. Aplikacija je dizajnirana tako da pruži niz funkcionalnosti, uključujući:
+Program koji smo razvili u sklopu vježbi iz ovog kolegija predstavlja jednostavan, ali učinkovit sustav za upravljanje inventarom restorana. Aplikacija je oblikovana tako da pruža niz funkcionalnosti, uključujući:
 
 - Mogućnost registracije novih korisnika, uz rigoroznu validaciju unosa, kako bi se osigurao integritet korisničkih podataka.
 - Mogućnost prijave na sustav nakon uspješne registracije, omogućujući korisnicima pristup osobnim i profesionalnim resursima.

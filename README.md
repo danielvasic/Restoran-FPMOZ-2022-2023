@@ -20,10 +20,8 @@ Program koji smo razvili u sklopu vježbi iz ovog kolegija predstavlja jednostav
 - Mogućnost odjave s sustava, što korisnicima pruža dodatni sloj sigurnosti i privatnosti.
 - Omogućavanje korisnicima da dodaju, pregledavaju, ažuriraju i brišu (CRUD - Create, Read, Update, Delete) kategorije, omogućujući dinamičko i prilagodljivo upravljanje resursima.
 - Omogućavanje korisnicima da dodaju, pregledavaju, ažuriraju i brišu (CRUD) proizvode, pružajući im alate za efikasno upravljanje proizvodnim inventarom.
--
-
- Dodana je podrška, iako nije u potpunosti implementirana, za dodavanje računa, otvarajući put za buduće proširenje funkcionalnosti.
-- i mnoge druge značajke koje čine ovu aplikaciju fleksibilnom i moćnom alatkom za upravljanje restoranima.
+- Dodana je podrška, iako nije u potpunosti implementirana, za dodavanje računa, otvarajući put za buduće proširenje funkcionalnosti.
+- Mnoge druge značajke koje čine ovu aplikaciju fleksibilnom i moćnom alatkom za upravljanje restoranima.
 
 Ako želite isprobati ovu aplikaciju, jednostavno možete klonirati repozitorij koristeći git naredbu:
 

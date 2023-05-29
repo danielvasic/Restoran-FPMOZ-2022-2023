@@ -27,6 +27,7 @@ public class CategoryController {
         model.addAttribute("category", new Category());
         model.addAttribute("categories", categoryRepo.findAll());
         model.addAttribute("added", false);
+        model.addAttribute("activeLink", "Kategorije");
         return "categories";
     }
 
@@ -39,6 +40,7 @@ public class CategoryController {
             model.addAttribute("category", category);
             model.addAttribute("categories", categoryRepo.findAll());
             model.addAttribute("added", true);
+            model.addAttribute("activeLink", "Kategorije");
             return "categories";
         }
         categoryRepo.save(category);
@@ -52,6 +54,8 @@ public class CategoryController {
         model.addAttribute("user", user);
         Category category = categoryRepo.findById(id).orElseThrow(() -> new IllegalArgumentException());
         model.addAttribute("category", category);
+        model.addAttribute("categories", categoryRepo.findAll());
+        model.addAttribute("activeLink", "Kategorije");
         return "category_edit";
     }
 
@@ -59,6 +63,7 @@ public class CategoryController {
     public String editCategory (@PathVariable("id") Long id, @Valid Category category, BindingResult result, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("category", category);
+            model.addAttribute("activeLink", "Kategorije");
             return "category_edit";
         }
         categoryRepo.save(category);

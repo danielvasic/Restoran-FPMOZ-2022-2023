@@ -1,6 +1,9 @@
 package ba.sum.fpmoz.restoran.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -12,20 +15,26 @@ public class Article {
     Long id;
 
     @Column(nullable = false)
+    @NotBlank(message = "Molimo unesite naziv proizvoda.")
     String name;
 
     @Column(nullable = false)
+    @NotBlank(message = "Molimo unesite opis proizvoda.")
     String description;
 
     @Column(nullable = false)
+    @NotNull(message = "Molimo unesite cijenu proizvoda.")
     Float price;
 
-    @Column(nullable = false)
-    Integer quantity;
 
+    @Column(nullable = false)
+    String image;
+
+    @NotBlank(message = "Molimo unesite jedinicu proizvoda.")
     @Column(nullable = false)
     String unit;
 
+    @NotNull(message = "Molimo odaberite kategoriju proizvoda.")
     @ManyToOne
     @JoinColumn(name="category_id", nullable = false)
     Category category;
@@ -36,12 +45,12 @@ public class Article {
     public Article() {
     }
 
-    public Article(Long id, String name, String description, Float price, Integer quantity, String unit) {
+    public Article(Long id, String name, String description, Float price, String image, String unit) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.quantity = quantity;
+        this.image = image;
         this.unit = unit;
     }
 
@@ -77,12 +86,12 @@ public class Article {
         this.price = price;
     }
 
-    public Integer getQuantity() {
-        return quantity;
+    public String getImage() {
+        return image;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getUnit() {

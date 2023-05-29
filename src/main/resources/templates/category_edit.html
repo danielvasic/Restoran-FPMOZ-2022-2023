@@ -10,11 +10,17 @@
     <div class="col">
       <h4>Uređivanje kategorije</h4>
       <form th:object="${category}" th:action="@{/category/edit/{id}(id=${category.getId()})}" method="POST">
-        <div class="modal-body">
-          <label class="col-form-label">Unesite naziv kategorije:</label>
-          <input class="form-control" th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}" type="text" th:field="*{name}">
-          <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="invalid-feedback"></div>
-        </div>
+
+        <label class="col-form-label">Unesite naziv kategorije:</label>
+        <input class="form-control" th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}" type="text" th:field="*{name}">
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="invalid-feedback"></div>
+
+        <label class="col-form-label">Odaberite nadkategoriju</label>
+        <select class="form-control" th:field="*{parent}">
+          <option value="">Odaberite kategoriju</option>
+          <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+        </select>
+
         <button type="submit" class="btn btn-primary mt-5">Uredi</button>
       </form>
     </div>

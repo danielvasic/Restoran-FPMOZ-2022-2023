@@ -8,6 +8,8 @@ services:
       - 8080:8080
     networks:
       - rest-network
+    volumes:
+      - java-data:/app/uploads
     depends_on:
       - mysql
   mysql:
@@ -27,3 +29,4 @@ networks:
     driver: bridge
 volumes:
   mysql-data:
+  java-data:

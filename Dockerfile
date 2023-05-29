@@ -4,6 +4,9 @@ COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package -DskipTests
 
 FROM openjdk:18-jdk-slim
-COPY --from=build /home/app/target/Restoran-0.0.1-SNAPSHOT.jar /usr/local/lib/restoran.jar
+
+COPY --from=build /home/app/target/Restoran-0.0.1-SNAPSHOT.jar /app/restoran.jar
+RUN mkdir /app/uploads
+WORKDIR /app
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/local/lib/restoran.jar"]
+ENTRYPOINT ["java","-jar","/app/restoran.jar"]

@@ -47,6 +47,9 @@ public class CategoryController {
 
     @GetMapping("/category/edit/{id}")
     public String showEditForm(@PathVariable("id") Long id, Model model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails user = (UserDetails) auth.getPrincipal();
+        model.addAttribute("user", user);
         Category category = categoryRepo.findById(id).orElseThrow(() -> new IllegalArgumentException());
         model.addAttribute("category", category);
         return "category_edit";

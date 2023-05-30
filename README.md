@@ -15,6 +15,13 @@ Dobro došli u repozitorij vježbi za kolegij **Programiranje u Javi**. Ovaj kol
 
 ## Instalacija i upotreba programa
 
+**Važno** - Prilikom postavljanja poslužitelja umjesto korištenja Ubuntu operacijskog sustava preporuka je koristiti Oracle Linux s Ampere A1 Compute gdje možete birati više RAM memorije i VCPu. Instalaciju docker-a na Oracle Linux-u možete pronaći [ovdje](https://www.atlantic.net/dedicated-server-hosting/how-to-install-docker-and-docker-compose-on-oracle-linux-8/). Također na Oracle Linux-u podignut je lokalni firewall pa je potrebno dodati iznimke izvršavanjem sljedećih naredbi:
+
+```
+firewall-cmd --zone=public --add-port=8080/tcp --permanent 
+firewall-cmd --reload 
+```
+
 Program koji smo razvili u sklopu vježbi iz ovog kolegija predstavlja jednostavan, ali učinkovit sustav za upravljanje inventarom restorana. Aplikacija je oblikovana tako da pruža niz funkcionalnosti, uključujući:
 
 - Mogućnost registracije novih korisnika, uz rigoroznu validaciju unosa, kako bi se osigurao integritet korisničkih podataka.
